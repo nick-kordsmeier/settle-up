@@ -1,12 +1,79 @@
 <ion-header>
   <ion-navbar>
+    <ion-icon name="menu" item-start></ion-icon>
     <ion-title>Dashboard</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-Total You Owe
-Total Owed to You
+  <button ion-button (tap)="getData()">Get Data</button>
+
+  <ion-card (tap)="showYourFriendsOweYou()">
+      <ion-item>
+          <ion-icon name="contact" item-start></ion-icon>
+          Your Friends Owe You
+          <ion-badge item-end>$50</ion-badge>
+        </ion-item>  
+
+        <ion-list *ngIf="showYourFriendsOweYouBool">
+            <ion-item>
+              <ion-avatar item-start>
+                <img src="assets/imgs/temp-images/mary.jpg">
+              </ion-avatar>
+              <h2>Mary</h2>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-start>
+                  <img src="assets/imgs/temp-images/betsy.jpg">
+                </ion-avatar>
+                <h2>Betsy</h2>
+            </ion-item>
+
+            <ion-item>
+                <ion-avatar item-start>
+                  <img src="assets/imgs/temp-images/gwen.jpg">
+                </ion-avatar>
+                <h2>Gwen</h2>
+            </ion-item>
+          </ion-list>
+  </ion-card>
+
+
+
+  <ion-card (tap)="showYouOweYourFriends()">
+      <ion-item>
+          <ion-icon name="contacts" item-start></ion-icon>
+          You Owe Your Friends
+          <ion-badge item-end>$100</ion-badge>
+      </ion-item>  
+
+
+      <ion-list *ngIf="showYouOweYourFriendsBool">
+          <ion-item>
+            <ion-avatar item-start>
+              <img src="assets/imgs/temp-images/mary.jpg">
+            </ion-avatar>
+            <h2>Mary</h2>
+          </ion-item>
+
+          <ion-item>
+              <ion-avatar item-start>
+                <img src="assets/imgs/temp-images/betsy.jpg">
+              </ion-avatar>
+              <h2>Betsy</h2>
+          </ion-item>
+
+          <ion-item>
+              <ion-avatar item-start>
+                <img src="assets/imgs/temp-images/gwen.jpg">
+              </ion-avatar>
+              <h2>Gwen</h2>
+          </ion-item>
+        </ion-list>
+
+  </ion-card>
+
 
 Recent Group Activity
 
