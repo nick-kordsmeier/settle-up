@@ -1,15 +1,25 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Groups
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar>
+      <ion-buttons>
+        <button ion-button icon-only (click)="showMenu()">
+            <ion-icon name="menu" item-start></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>Groups</ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="showAddMenu()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
 
-<ion-content padding>
-Group Info
-
-Group #1
-
-Group #2
+<ion-content>
+  <ion-searchbar (ionInput)="getGroups($event)"></ion-searchbar>
+    <ion-card *ngFor="let group of groups | async">
+        <ion-item>
+          {{ group?.name }}
+          
+        </ion-item>
+    </ion-card>
 </ion-content>

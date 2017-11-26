@@ -1,14 +1,24 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Purchases
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-buttons>
+          <button ion-button icon-only (click)="showMenu()">
+              <ion-icon name="menu" item-start></ion-icon>
+          </button>
+        </ion-buttons>
+        <ion-title>Purchases</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="showAddMenu()">
+              <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-buttons>
+      </ion-navbar>
 </ion-header>
 
 <ion-content>
-        <ion-item>
-          {{ 1 + 1 }}
-          {{ items?.item }}
-        </ion-item>
+    <ion-searchbar (ionInput)="getPurchases($event)"></ion-searchbar>
+    <ion-card *ngFor="let purchase of purchases | async">
+          <ion-item>
+            {{ purchase?.item }}
+          </ion-item>
+      </ion-card>
 </ion-content>

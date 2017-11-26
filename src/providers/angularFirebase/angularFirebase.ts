@@ -1,26 +1,35 @@
-import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable'
 
 @Injectable()
 export class AngularFirebase {
-item;
+groupsRef: AngularFireList<any>;
+groups: Observable<any[]>;
+
+purchasesRef: AngularFireList<any>;
+purchases: Observable<any[]>;
+  
+
   constructor(
-    public http: Http,
     private afDB: AngularFireDatabase   
-  ) {  }
+  ) {
+    this.groupsRef = afDB.list("GROUPS");
+    this.purchasesRef = afDB.list("GROUPS/group2/PURCHASES")
+    }
 
-  // getPurchaseData() {
-  //   return this.afDB.list("GROUPS/group1/PURCHASES").valueChanges()
-  //   .map(res => res);
-  // }
-
-  getPurchaseData() {
-    return this.http.get('https://settle-up-b921a.firebaseio.com/GROUPS/group2/PURCHASES/purchase1.json')
-    .map(res => res.json());
+  getGroupData() {
+    return this.groupsRef.valueChanges();
   }
+
+  getPurchasesData() {
+    return this.purchasesRef.valueChanges();
+  }
+
+
+
 
 
 

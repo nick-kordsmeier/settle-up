@@ -1,82 +1,66 @@
 <ion-header>
   <ion-navbar>
-    <ion-icon name="menu" item-start></ion-icon>
+    <ion-buttons>
+      <button ion-button icon-only (click)="showMenu()">
+          <ion-icon name="menu" item-start></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>Dashboard</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="showAddMenu()">
+          <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <button ion-button (tap)="getData()">Get Data</button>
+<h2>Welcome, [[user]]!</h2>
+<ion-card>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p>Your friends owe you:</p>
+        <div class="container">
+          <img src="assets/imgs/shapes/settle-up_green-circle-large.png" alt="Green Circle" style="width:100%;">
+          <div class="center-text">$100</div>
+        </div>
+      </ion-col>
+      <ion-col>
+          <p>You owe your friends:</p>
+          <div class="container">
+              <img src="assets/imgs/shapes/settle-up_red-circle-large.png" alt="Red Circle" style="width:100%;">
+              <div class="center-text">$45</div>
+          </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
 
-  <ion-card (tap)="showYourFriendsOweYou()">
+  <h2>Recent Purchases</h2>
+  <ion-card>
+    <ion-list>
       <ion-item>
-          <ion-icon name="contact" item-start></ion-icon>
-          Your Friends Owe You
-          <ion-badge item-end>$50</ion-badge>
-        </ion-item>  
-
-        <ion-list *ngIf="showYourFriendsOweYouBool">
-            <ion-item>
-              <ion-avatar item-start>
-                <img src="assets/imgs/temp-images/mary.jpg">
-              </ion-avatar>
-              <h2>Mary</h2>
-            </ion-item>
-
-            <ion-item>
-                <ion-avatar item-start>
-                  <img src="assets/imgs/temp-images/betsy.jpg">
-                </ion-avatar>
-                <h2>Betsy</h2>
-            </ion-item>
-
-            <ion-item>
-                <ion-avatar item-start>
-                  <img src="assets/imgs/temp-images/gwen.jpg">
-                </ion-avatar>
-                <h2>Gwen</h2>
-            </ion-item>
-          </ion-list>
+        Purchase 1         
+      </ion-item>
+      <ion-item>
+        Purchase 2         
+      </ion-item>
+    </ion-list>
   </ion-card>
 
 
-
-  <ion-card (tap)="showYouOweYourFriends()">
-      <ion-item>
-          <ion-icon name="contacts" item-start></ion-icon>
-          You Owe Your Friends
-          <ion-badge item-end>$100</ion-badge>
-      </ion-item>  
-
-
-      <ion-list *ngIf="showYouOweYourFriendsBool">
+    <h2>Recent Group Activity</h2>
+    <ion-card>
+        <ion-list>
           <ion-item>
-            <ion-avatar item-start>
-              <img src="assets/imgs/temp-images/mary.jpg">
-            </ion-avatar>
-            <h2>Mary</h2>
+            Group Action 1         
           </ion-item>
-
           <ion-item>
-              <ion-avatar item-start>
-                <img src="assets/imgs/temp-images/betsy.jpg">
-              </ion-avatar>
-              <h2>Betsy</h2>
-          </ion-item>
-
-          <ion-item>
-              <ion-avatar item-start>
-                <img src="assets/imgs/temp-images/gwen.jpg">
-              </ion-avatar>
-              <h2>Gwen</h2>
+            Group Action 2         
           </ion-item>
         </ion-list>
-
-  </ion-card>
-
-
-Recent Group Activity
-
-Recent Purchases
+      </ion-card>
+    
 
 </ion-content>
