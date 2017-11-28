@@ -25697,3 +25697,15 @@ page-dashboard .center-text {
   transform: translate(-50%, -50%);
   font-size: 3em;
 }
+
+page-login .invalid {
+  border-bottom: 1px solid #FF6153;
+}
+
+page-reset-password .invalid {
+  border-bottom: 1px solid #FF6153;
+}
+
+page-signup .invalid {
+  border-bottom: 1px solid #FF6153;
+}

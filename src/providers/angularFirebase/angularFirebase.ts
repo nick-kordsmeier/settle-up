@@ -28,9 +28,4 @@ purchases: Observable<any[]>;
     return this.purchasesRef.valueChanges();
   }
 
-
-
-
-
-
 }

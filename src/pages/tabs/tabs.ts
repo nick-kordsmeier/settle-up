@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
+import { DashboardPage } from '../dashboard/dashboard';
 import { GroupsPage } from '../groups/groups';
 import { PurchasesPage } from '../purchases/purchases';
-import { DashboardPage } from '../dashboard/dashboard';
 
 @Component({
   templateUrl: 'tabs.html'

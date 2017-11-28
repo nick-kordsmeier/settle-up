@@ -1,10 +1,8 @@
 <ion-header>
   <ion-navbar>
-    <ion-buttons>
-      <button ion-button icon-only (click)="showMenu()">
-          <ion-icon name="menu" item-start></ion-icon>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
       </button>
-    </ion-buttons>
     <ion-title>Dashboard</ion-title>
     <ion-buttons end>
         <button ion-button icon-only (click)="showAddMenu()">
@@ -15,7 +13,7 @@
 </ion-header>
 
 <ion-content padding>
-<h2>Welcome, [[user]]!</h2>
+<h2>Welcome, {{userInfo?.displayName}}!</h2>
 <ion-card>
   <ion-grid>
     <ion-row>
